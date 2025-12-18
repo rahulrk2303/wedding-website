@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rahul & Sruthi | The Celebration</title>
+    
+    <!-- Fonts: Inter (Apple-like sans) & Playfair Display (Elegant Serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Invitation style fonts (Cormorant Garamond & Montserrat) -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for optional decorative icons (used sparingly) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@0.263.1/dist/umd/lucide.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'rich-black': '#050505',
+                        'charcoal': '#1a1a1a',
+                        'gold-accent': '#D4AF37',
+                        'sunset-glow': '#FF7E5F',
+                        'sunset-purple': '#2D1B2E',
+                        'soft-white': '#F5F5F7', // Apple-ish off-white
+                        'glass': 'rgba(255, 255, 255, 0.08)',
+                    },
+                    fontFamily: {
+                        sans: ['"Inter"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Base Setup */
+        body {
+            background: linear-gradient(180deg, #ffffff 0%, #fbf7f2 50%, #f7efe6 100%);
+            color: #1a1a1a;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            scroll-behavior: smooth;
+            position: relative;
+        }
+
+        /* Animated gradient background (subtle warm highlights for joy) */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at 20% 50%, rgba(255, 191, 128, 0.06) 0%, transparent 50%),
+                        radial-gradient(ellipse at 80% 80%, rgba(245, 229, 214, 0.06) 0%, transparent 50%);
+            z-index: -2;
+            pointer-events: none;
+            animation: gradientShift 12s ease-in-out infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.8;
+            }
+        }
+
+        /* Glassmorphism - light theme */
+        .glass-panel {
+            background: rgba(145, 167, 247, 0.6);
+            backdrop-filter: blur(1px);
+            -webkit-backdrop-filter: blur(1px);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            box-shadow: 0 8px 32px rgba(10, 10, 10, 0.04);
+            color: #1a1a1a;
+        }
+        
+        .glass-button {
+            background: rgba(232, 135, 220, 0.7);
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        
+        .glass-button:hover {
+            background: rgba(212, 175, 55, 0.12);
+            transform: translateY(-2px);
+            border-color: rgba(212, 175, 55, 0.15);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.06);
+        }
+
+        /* Ensure nav links inherit dark color on light theme */
+        nav .glass-panel a { color: inherit; }
+        nav .glass-panel a:hover { color: #B6862B; }
+        .rsvp-btn { background: #D4AF37; color: #fff; }
+        .rsvp-btn:hover { background: #b88f2a; }
+
+        /* Text Gradient */
+        .text-gradient-gold {
+            background: linear-gradient(135deg, #F2C94C, #F2994A);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Marquee Styles */
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            animation: marquee 20s linear infinite;
+            display: inline-block;
+            width: 200%;
+        }
+
+        /* Premium Gliding animations */
+        @keyframes glideIn {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes glideUp {
+            from {
+                opacity: 0;
+                transform: translateY(80px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -1000px 0;
+            }
+            100% {
+                background-position: 1000px 0;
+            }
+        }
+
+        @keyframes subtleFloat {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Glow effect */
+        .glow-effect {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glow-effect::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.3) 0%, transparent 70%);
+            animation: glowPulse 4s ease-in-out infinite;
+        }
+
+        @keyframes glowPulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+        }
+
+        /* Hero section styling */
+        .hero-content {
+            animation: glideUp 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s both;
+        }
+
+        /* Card animations */
+        .event-card {
+            animation: scaleIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .event-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s ease;
+            z-index: 1;
+        }
+
+        .event-card:hover::before {
+            left: 100%;
+        }
+
+        .event-card:nth-child(1) { animation-delay: 0.1s; }
+        .event-card:nth-child(2) { animation-delay: 0.25s; }
+        .event-card:nth-child(3) { animation-delay: 0.4s; }
+        .event-card:nth-child(4) { animation-delay: 0.55s; }
+
+        .event-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 38px rgba(212, 175, 55, 0.16);
+            border-color: rgba(212, 175, 55, 0.15);
+        }
+
+        .event-card .image-overlay {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(180deg, rgba(245,242,238,0.6), rgba(255,255,255,0.9));
+            min-height: 140px;
+        }
+
+        .event-card img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            display: block;
+            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .event-card:hover img {
+            transform: scale(1.02);
+        }
+
+        /* Smooth scroll fade */
+        .fade-in {
+            opacity: 0;
+            animation: glideIn 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        /* Premium button effect */
+        .premium-btn {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .premium-btn::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .premium-btn:hover::after {
+            width: 300px;
+            height: 300px;
+        }
+
+        /* Enhanced gradient text */
+        .gradient-text-large {
+            background: linear-gradient(135deg, #F2C94C, #F2994A, #FF7E5F);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientFlow 6s ease infinite;
+            background-size: 200% 200%;
+        }
+
+        @keyframes gradientFlow {
+            0%, 100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        /* Nav animation */
+        nav {
+            animation: glideIn 0.6s ease-out;
+        }
+
+        /* Text reveal animation */
+        .text-reveal {
+            overflow: hidden;
+        }
+
+        .text-reveal span {
+            display: inline-block;
+            animation: slideInLeft 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+        }
+
+        /* Floating elements */
+        .floating {
+            animation: subtleFloat 3s ease-in-out infinite;
+        }
+
+        /* Invitation-style utility classes */
+        .font-serif-custom { font-family: 'Cormorant Garamond', serif; }
+        .font-sans-custom { font-family: 'Montserrat', sans-serif; }
+
+        /* Hide Scrollbar but keep functionality */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #d4b08c; border-radius: 6px; }
+        ::-webkit-scrollbar-thumb:hover { background: #b89572; }
+
+        /* Parallax Utility Classes */
+        .parallax-wrapper { position: relative; overflow-x: hidden; perspective: 1px; transform-style: preserve-3d; }
+        .parallax-layer { will-change: transform; transition: transform 0.3s linear; }
+
+
+
+        /* General Animations */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in-section { opacity: 0; transition: opacity 1s ease-out, transform 1s ease-out; }
+        .fade-in-section.is-visible { opacity: 1; transform: none; }
+
+        /* Text Shadow utility for hero readability */
+        .text-shadow-lg { text-shadow: 2px 2px 6px rgba(0,0,0,0.1); }
+
+        /* Loader styles */
+        #loader { position: fixed; inset: 0; background: #fff; z-index: 9999; display: flex; justify-content: center; align-items: center; transition: opacity 0.5s ease; }
+        #loader .logo { font-size: 2.25rem; color: #d4b08c; font-family: 'Cormorant Garamond', serif; font-style: italic; }
+        #loader .spinner { border-bottom: 3px solid #d4b08c; width: 36px; height: 36px; border-radius: 50%; animation: spin 1s linear infinite; }
+        @keyframes spin { from { transform: rotate(0deg);} to { transform: rotate(360deg);} }
+
+        /* Section headings */
+        .section-heading {
+            animation: glideUp 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+        }
+
+        /* Image overlay effect */
+        .image-overlay {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .image-overlay::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        /* Pulse animation for interactive elements */
+        @keyframes pulse-soft {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+
+        .pulse {
+            animation: pulse-soft 2s ease-in-out infinite;
+        }
+
+        /* Smooth transitions */
+        * {
+            transition-property: background-color, border-color, color, fill, stroke;
+            transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+            transition-duration: 0.3s;
+        }
+
+        /* Photo Gallery Carousel Styles */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(212, 175, 55, 0.12);
+            transition: height 400ms cubic-bezier(.22,.9,.37,1);
+        }
+
+        .carousel-track {
+            display: flex;
+            height: 100%;
+            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(250,247,242,0.95));
+            padding: 16px;
+            box-sizing: border-box;
+        }
+
+        .carousel-slide img {
+            /* Portrait and landscape fully visible */
+            max-width: 100%;
+            max-height: 75vh;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            display: block;
+            border-radius: 8px;
+        }
+
+        /* Two-row continuous duo-carousel styles */
+        .duo-carousel { width: 100%; max-width: 1100px; margin: 0 auto; }
+        .duo-row { overflow: hidden; width: 100%; position: relative; }
+        .duo-row.top { height: 320px; }
+        .duo-row.bottom { height: 460px; }
+        .duo-track { display: flex; align-items: center; height: 100%; white-space: nowrap; will-change: transform; }
+        .duo-slide { display: inline-flex; align-items: center; justify-content: center; margin-right: 12px; flex: 0 0 auto; }
+        .duo-slide img { display: block; border-radius: 12px; box-shadow: 0 12px 30px rgba(16,24,40,0.08); }
+        .duo-slide.horizontal img { height: 280px; width: auto; object-fit: contain; }
+        .duo-slide.vertical img { height: 420px; width: auto; object-fit: contain; }
+
+        @media (max-width: 1024px) {
+            .duo-row.top { height: 240px; }
+            .duo-row.bottom { height: 360px; }
+            .duo-slide.horizontal img { height: 200px; }
+            .duo-slide.vertical img { height: 300px; }
+        }
+
+        @media (max-width: 640px) {
+            /* stack rows on small screens and reduce sizes */
+            .duo-row.top, .duo-row.bottom { height: auto; }
+            .duo-track { gap: 10px; }
+            .duo-slide.horizontal img, .duo-slide.vertical img { width: 100%; height: auto; max-width: 380px; }
+        }
+
+        .carousel-controls {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 12px;
+            z-index: 10;
+        }
+
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .carousel-dot.active {
+            background: #D4AF37;
+            width: 30px;
+            border-radius: 5px;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            color: #D4AF37;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .carousel-button:hover {
+            background: rgba(212, 175, 55, 0.2);
+            border-color: #D4AF37;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-button.prev {
+            left: 20px;
+        }
+
+        .carousel-button.next {
+            right: 20px;
+        }
+
+        /* Gallery section heading */
+        .gallery-heading {
+            text-align: center;
+            margin-bottom: 32px;
+            animation: glideUp 1s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+        }
+
+        .gallery-heading h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #F2C94C, #F2994A);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Day Section Styles */
+        .day-section {
+            opacity: 0;
+            animation: glideUp 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        .day-date {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #D4AF37;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 2px;
+            text-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+            margin-bottom: 8px;
+        }
+
+        .day-title {
+            font-size: 1.5rem;
+            color: #F5F5F7;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Timeline / Treasure Map styles - light joyful theme */
+        .timeline-wrapper {
+            position: relative;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px 0;
+            border-radius: 20px;
+        }
+
+        .timeline-map {
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'><circle cx='20' cy='20' r='2' fill='%23F2C94C' opacity='0.14'/></svg>");
+            background-blend-mode: multiply, overlay;
+            background-size: cover, 40px 40px;
+            background-position: center, center;
+            opacity: 0.12;
+            border-radius: 20px;
+            pointer-events: none;
+            z-index: 0;
+            filter: saturate(0.98) brightness(1.02);
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 20px;
+            bottom: 20px;
+            width: 6px;
+            background: repeating-linear-gradient(180deg, #D4AF37 0 6px, rgba(212,175,55,0.15) 6px 12px);
+            transform: translateX(-50%);
+            z-index: 5;
+            border-radius: 4px;
+            box-shadow: 0 6px 18px rgba(212,175,55,0.08);
+        }
+
+        .timeline-item {
+            position: relative;
+            width: 50%;
+            padding: 12px 24px;
+            z-index: 10;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .timeline-item.left { left: 0; text-align: right; }
+        .timeline-item.right { left: 50%; text-align: left; }
+
+        .timeline-item .timeline-content {
+            display: inline-block;
+            max-width: 420px;
+            background: rgba(255, 250, 244, 0.96);
+            border-radius: 12px;
+            padding: 14px;
+            border: 1px solid rgba(0,0,0,0.06);
+            box-shadow: 0 8px 20px rgba(16,24,40,0.06);
+            position: relative;
+            color: #1a1a1a;
+            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'><circle cx='20' cy='20' r='1.5' fill='%23f3e8e0' opacity='0.12'/></svg>");
+            background-repeat: repeat;
+            background-size: 40px 40px;
+        }
+
+        .timeline-content h3, .timeline-content p { color: #1a1a1a; }
+
+        .timeline-pin {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 28px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #D4AF37;
+            border: 2px solid rgba(255,255,255,0.95);
+            box-shadow: 0 6px 18px rgba(212,175,55,0.25);
+            z-index: 12;
+        }
+
+        .timeline-item .timeline-image {
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 10px;
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* responsive adjustments */
+        @media (max-width: 768px) {
+            .timeline-line { left: 22px; transform: none; width: 3px; }
+            .timeline-item { width: 100%; padding-left: 50px; padding-right: 16px; text-align: left; }
+            .timeline-item.left, .timeline-item.right { left: 0; }
+            .timeline-pin { left: 22px; transform: translateX(0); top: 36px; }
+            .timeline-item .timeline-content { margin-left: 18px; }
+        }
+
+    </style>
+</head>
+<body class="selection:bg-gold-accent selection:text-black font-sans-custom">
+
+    <!-- Loading Screen (invitation-style) -->
+    <div id="loader">
+        <div class="text-center">
+            <div class="logo mb-4">R &amp; S</div>
+            <div class="spinner mx-auto"></div>
+        </div>
+    </div> 
+
+    <!-- Navigation (Minimalist Dynamic Island Style) -->
+    <nav class="sticky top-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 w-fit mx-auto" id="navbar">
+        <div class="glass-panel rounded-full px-6 py-3 flex items-center gap-8 shadow-2xl">
+            <a href="#hero" class="font-serif text-xl font-bold text-black tracking-wider hover:text-gold-accent transition-colors">R&S</a>
+            <div class="hidden md:flex items-center gap-6 text-sm font-medium tracking-wide text-gray-600">
+                <a href="#narrative" class="hover:text-black transition-colors">Story</a>
+                <a href="#events" class="hover:text-black transition-colors">Events</a>
+                <a href="#venue" class="hover:text-black transition-colors">Venue</a>
+            </div>
+            <a href="#rsvp" class="rsvp-btn px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest">
+                RSVP
+            </a>
+        </div>
+    </nav>
+
+    <!-- 1. Hero Section: Cinematic -->
+    <section id="hero" class="relative h-screen w-full overflow-hidden flex items-center glow-effect">
+        <!-- Background -->
+        <div class="absolute inset-0 z-0">
+            <!-- Premium web background image -->
+            <img 
+                src="background.jpeg" 
+                alt="Wedding Celebration" 
+                class="w-full h-full object-cover opacity-85 transition-opacity duration-1000 parallax-layer"
+                id="hero-bg-img" data-speed="0.5"
+            >
+            <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-transparent"></div>
+            <div class="absolute inset-0 bg-radial-gradient from-transparent via-black/60 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 w-full flex flex-col justify-center items-center text-center px-4 pt-12 hero-content parallax-layer" data-speed="1.1">
+            <p class="text-gold-accent text-sm md:text-base tracking-[0.4em] mb-6 pulse font-sans-custom">Save the Date</p>
+            <h1 class="font-serif-custom text-6xl md:text-9xl text-white mb-2 tracking-tight leading-none text-shadow-lg">
+                Rahul <span class="font-thin text-white/60">&</span> Sruthi
+            </h1>
+            <p class="text-gray-300 text-lg md:text-2xl font-light mt-8 tracking-wide">
+                April 03, 2026
+            </p>
+
+        </div> 
+
+    </section>
+
+    <!-- 2. Narrative Section: Photo Gallery -->
+    <section id="narrative" class="py-24 bg-transparent relative z-10 fade-in-section">
+        <div class="container mx-auto px-6 md:px-12 max-w-7xl">
+            <div class="gallery-heading fade-in">
+                <span class="text-gold-accent uppercase tracking-widest text-xs font-bold block mb-4">Our Moments</span>
+                <h2>Our Story in Pictures</h2>
+                <p class="text-gray-700 text-lg mt-4 font-light">Beautiful memories captured through the lens of love</p>
+            </div>
+            
+            <!-- Duo-row running carousel: top = horizontal, bottom = vertical -->
+            <!-- Hidden gallery sources (extracted from original slides) -->
+            <div id="gallerySources" style="display:none">
+                <img data-src="gallery/0763439D-869C-4E42-AC63-E9C0F781DB44_1_105_c.jpeg" alt="">
+                <img data-src="gallery/12ADFAF9-6581-46A3-85D7-07F02E391275_1_105_c.jpeg" alt="">
+                <img data-src="gallery/1437C8C3-931D-4F40-9E7C-A4DF14F5602E_1_105_c.jpeg" alt="">
+                <img data-src="gallery/1972B9BD-6E6E-47E6-B878-A15007B6F8AA_1_105_c.jpeg" alt="">
+                <img data-src="gallery/20EDDB6A-B9D6-41CD-BD37-9C968C614095_1_105_c.jpeg" alt="">
+                <img data-src="gallery/2B4AE903-A69A-4909-9A1F-61A43537F77A_1_105_c.jpeg" alt="">
+                <img data-src="gallery/2C411643-999B-450A-A86D-ADF02D6A5BCF_1_105_c.jpeg" alt="">
+                <img data-src="gallery/3A2B5108-F9C4-48B7-8FBC-7760FF42EFAE_1_105_c.jpeg" alt="">
+                <img data-src="gallery/4E4F1F9B-B81F-4615-9BB8-27128DCDBE75_1_105_c.jpeg" alt="">
+                <img data-src="gallery/52DEFBF1-9E55-4153-B2CD-A7BFA23EE001_1_105_c.jpeg" alt="">
+                <img data-src="gallery/5CD79AD6-5FBF-45EC-ABBF-66851B192820_1_105_c.jpeg" alt="">
+                <img data-src="gallery/6B3F2F02-10ED-4022-9255-EF68D36BC6CD_1_105_c.jpeg" alt="">
+                <img data-src="gallery/6D5CD9A6-E61B-4AD9-987E-832A2012CA6F_1_105_c.jpeg" alt="">
+                <img data-src="gallery/7EC29093-E5CE-4199-A462-1FBD85859672_1_105_c.jpeg" alt="">
+                <img data-src="gallery/A48E38AC-072C-487D-8144-367F2593728D_1_105_c.jpeg" alt="">
+                <img data-src="gallery/C6A8D236-9A85-421D-BE22-92AD1DBF903C_1_105_c.jpeg" alt="">
+                <img data-src="gallery/C852BBCD-C7C2-49D4-A21D-EBD0AA011432_1_105_c.jpeg" alt="">
+                <img data-src="gallery/CE996DD2-900C-4A54-905E-3734FC3D2873_1_105_c.jpeg" alt="">
+                <img data-src="gallery/D105EBB1-8F5B-4AFF-BDB9-8D3DCB5939F1_1_105_c.jpeg" alt="">
+                <img data-src="gallery/D287F06F-2A47-45F9-86F3-9CAEE4560212_1_105_c.jpeg" alt="">
+                <img data-src="gallery/DABE543F-8CEC-4E9C-B061-9F644E9183C8_1_105_c.jpeg" alt="">
+                <img data-src="gallery/EB6E4803-8F7B-47D0-ABEE-A4D147CB64C0_1_105_c.jpeg" alt="">
+                <img data-src="gallery/F1C55DE5-6589-4F97-AF4F-3841A50CB3E2_1_105_c.jpeg" alt="">
+                <img data-src="gallery/F555520D-85CE-4FDA-B2D4-8120A925CE36_1_105_c.jpeg" alt="">
+            </div>
+
+            <div id="duoCarousel" class="duo-carousel fade-in" style="animation-delay:0.2s;">
+                <div class="duo-row top" aria-label="Horizontal photos">
+                    <div class="duo-track" id="duoTrackTop" aria-hidden="false"></div>
+                </div>
+
+                <div class="duo-row bottom mt-6" aria-label="Vertical photos">
+                    <div class="duo-track" id="duoTrackBottom" aria-hidden="false"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Events Section: Treasure Map Timeline -->
+    <section id="events" class="bg-transparent relative py-12 fade-in-section">
+        <div class="text-center mb-12">
+            <span class="text-gold-accent uppercase tracking-widest text-xs font-bold section-heading">The Timeline</span>
+            <h2 class="text-4xl md:text-5xl font-serif text-gray-900 mt-4 section-heading" style="animation-delay: 0.1s;">A Treasure Map of Moments</h2>
+        </div>
+
+        <div class="timeline-wrapper">
+            <div class="timeline-map"></div>
+            <div class="timeline-line"></div>
+
+            <!-- Item 1: Engagement (left) -->
+            <div class="timeline-item left fade-in">
+                <div class="timeline-pin" aria-hidden="true"></div>
+                <div class="timeline-content event-card">
+                    <div class="timeline-image image-overlay">
+                        <img src="engagement.png" alt="Engagement">
+                    </div>
+                    <h3 class="text-2xl font-serif text-gray-900 mb-1">Engagement</h3>
+                    <p class="text-gold-accent mb-2 font-mono text-xs tracking-wider">April 2 — 11:00 AM</p>
+                    <p class="text-gray-400 text-sm">An intimate ceremony followed by high tea overlooking the bay.</p>
+                </div>
+            </div>
+
+            <!-- Item 2: Haldi (right) -->
+            <div class="timeline-item right fade-in">
+                <div class="timeline-pin" aria-hidden="true"></div>
+                <div class="timeline-content event-card">
+                    <div class="timeline-image image-overlay">
+                        <img src="haldi.png" alt="Haldi">
+                    </div>
+                    <h3 class="text-2xl font-serif text-gray-900 mb-1">Haldi</h3>
+                    <p class="text-yellow-500 mb-2 font-mono text-xs tracking-wider">April 2 — 2:00 PM</p>
+                    <p class="text-gray-400 text-sm">A splash of turmeric and flowers. Prepare to get messy and vibrant.</p>
+                </div>
+            </div>
+
+            <!-- Item 3: Sangeet (left) -->
+            <div class="timeline-item left fade-in">
+                <div class="timeline-pin" aria-hidden="true"></div>
+                <div class="timeline-content event-card">
+                    <div class="timeline-image image-overlay">
+                        <img src="sangeet.png" alt="Sangeet">
+                    </div>
+                    <h3 class="text-2xl font-serif text-gray-900 mb-1">Sangeet</h3>
+                    <p class="text-purple-400 mb-2 font-mono text-xs tracking-wider">April 2 — 6:30 PM</p>
+                    <p class="text-gray-400 text-sm">Music, dance, and celebration under the stars.</p>
+                </div>
+            </div>
+
+            <!-- Item 4: Wedding (right) -->
+            <div class="timeline-item right fade-in">
+                <div class="timeline-pin" aria-hidden="true"></div>
+                <div class="timeline-content event-card">
+                    <div class="timeline-image image-overlay">
+                        <img src="wedding.png" alt="Wedding">
+                    </div>
+                    <h3 class="text-2xl font-serif text-gray-900 mb-1">The Muhurtham</h3>
+                    <p class="text-sunset-glow mb-2 font-mono text-xs tracking-wider">April 3 — 9:00 AM</p>
+                    <p class="text-gray-400 text-sm">Sacred vows under the Mandap on the beach.</p>
+                </div>
+            </div>
+
+            <!-- Item 5: Chennai Reception (left) -->
+            <div class="timeline-item left fade-in">
+                <div class="timeline-pin" aria-hidden="true"></div>
+                <div class="timeline-content event-card">
+                    <div class="timeline-image image-overlay">
+                        <img src="reception1.png" alt="Chennai Reception">
+                    </div>
+                    <h3 class="text-2xl font-serif text-gray-900 mb-1">Chennai Reception</h3>
+                    <p class="text-emerald-400 mb-2 font-mono text-xs tracking-wider">April 4 — 6:30 PM</p>
+                    <p class="text-gray-400 text-sm">Elegant evening of toasts and fine dining.</p>
+                </div>
+            </div>
+
+            <!-- Item 6: Mannargudi Reception (right) -->
+            <div class="timeline-item right fade-in">
+                <div class="timeline-pin" aria-hidden="true"></div>
+                <div class="timeline-content event-card">
+                    <div class="timeline-image image-overlay">
+                        <img src="reception2.png" alt="Mannargudi Reception">
+                    </div>
+                    <h3 class="text-2xl font-serif text-gray-900 mb-1">Mannargudi Reception</h3>
+                    <p class="text-orange-400 mb-2 font-mono text-xs tracking-wider">April 7 — 7:00 PM</p>
+                    <p class="text-gray-400 text-sm">A warm hometown gathering to celebrate with family and friends.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 4. Venue Section -->
+    <section id="venue" class="h-screen relative flex items-center justify-center overflow-hidden fade-in-section">
+        <div class="absolute inset-0 z-0">
+            <!-- Premium web background image -->
+              <img id="venue-img" 
+                  src="mgm.png" 
+                  class="w-full h-full object-cover opacity-90 transition-opacity duration-1000" 
+                  alt="MGM Beach Resort Venue">
+            <div class="absolute inset-0 bg-black/50"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent"></div>
+        </div>
+        
+        <div class="relative z-10 text-center max-w-4xl px-6">
+            <div class="glass-panel p-12 rounded-3xl border border-white/15 fade-in">
+                <i data-lucide="map" class="w-12 h-12 text-gold-accent mx-auto mb-6 floating"></i>
+                <h2 class="text-5xl md:text-6xl font-serif text-white mb-4">MGM Beach Resort</h2>
+                <p class="text-xl text-gray-300 mb-8 font-light tracking-wide">Chennai, Tamil Nadu</p>
+                <div class="flex justify-center gap-4">
+                    <a href="https://maps.app.goo.gl/ad91qVCPm3zDUtvi7" target="_blank" class="glass-button premium-btn px-8 py-3 rounded-full text-white text-sm font-semibold uppercase tracking-wider flex items-center gap-2 hover:border-gold-accent hover:text-gold-accent">
+                        View Map<i data-lucide="arrow-up-right" class="h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Marquee -->
+    <div class="bg-gold-accent py-4 overflow-hidden">
+        <div class="flex whitespace-nowrap text-rich-black font-serif text-2xl font-bold uppercase tracking-wider animate-marquee">
+            <span class="mx-8">Celebrate Love</span> • <span class="mx-8">Save the Date</span> • <span class="mx-8">Rahul & Sruthi</span> • 
+            <span class="mx-8">Celebrate Love</span> • <span class="mx-8">Save the Date</span> • <span class="mx-8">Rahul & Sruthi</span> • 
+            <span class="mx-8">Celebrate Love</span> • <span class="mx-8">Save the Date</span> • <span class="mx-8">Rahul & Sruthi</span> •
+            <span class="mx-8">Celebrate Love</span> • <span class="mx-8">Save the Date</span> • <span class="mx-8">Rahul & Sruthi</span>
+        </div>
+    </div>
+    
+    <!-- 6. RSVP Section -->
+    <section id="rsvp" class="py-20 px-6 relative bg-white">
+        <div class="max-w-2xl mx-auto text-center fade-in">
+            <h2 class="text-4xl md:text-5xl font-serif text-gray-900 mb-4">Join Us</h2>
+            <p class="text-gray-700 mb-8 text-lg font-light">We would be honored to have your presence.</p>
+            
+            <div class="glass-panel p-8 rounded-3xl text-left border border-gray-100">
+                <form onsubmit="event.preventDefault(); this.innerHTML='<div class=\'text-center py-8 fade-in\'><h3 class=\'text-2xl text-gold-accent font-serif mb-2\'>See you there!</h3><p class=\'text-gray-600\'>Your RSVP is confirmed. We look forward to celebrating with you.</p></div>'" class="space-y-4">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="space-y-2">
+                            <label class="text-xs uppercase tracking-widest text-gray-600 font-semibold">First Name</label>
+                            <input type="text" class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-800 focus:border-gold-accent focus:bg-white outline-none transition-all duration-300" required>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-xs uppercase tracking-widest text-gray-600 font-semibold">Last Name</label>
+                            <input type="text" class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-800 focus:border-gold-accent focus:bg-white outline-none transition-all duration-300" required>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-2">
+                        <label class="text-xs uppercase tracking-widest text-gray-600 font-semibold">Email</label>
+                        <input type="email" class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-800 focus:border-gold-accent focus:bg-white outline-none transition-all duration-300" required>
+                    </div>
+                    
+                    <div class="space-y-2">
+                        <label class="text-xs uppercase tracking-widest text-gray-600 font-semibold">Attending</label>
+                        <select class="w-full bg-white border border-gray-200 rounded-lg px-4 py-3 text-gray-800 focus:border-gold-accent focus:bg-white outline-none transition-all duration-300">
+                            <option class="bg-white text-gray-800">All Events</option>
+                            <option class="bg-white text-gray-800">Wedding Only</option>
+                            <option class="bg-white text-gray-800">Reception Only</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="w-full bg-gradient-to-r from-gold-accent to-yellow-400 text-black font-bold py-3 rounded-lg uppercase tracking-widest hover:from-yellow-400 hover:to-gold-accent transition-all duration-200 premium-btn mt-4 shadow">
+                        Confirm Attendance
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#f7efe6] py-16 border-t border-gray-200">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-12 mb-12">
+                <div>
+                    <div class="font-serif text-2xl font-bold text-gold-accent mb-2">Rahul & Sruthi</div>
+                    <p class="text-gray-600 text-sm">A celebration of love, April 2026</p>
+                </div>
+                <div>
+                    <h3 class="text-gray-800 font-semibold mb-4 uppercase tracking-wider text-sm">Quick Links</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="#hero" class="text-gray-600 hover:text-gold-accent transition-colors">Home</a>
+                        <a href="#events" class="text-gray-600 hover:text-gold-accent transition-colors block">Events</a>
+                        <a href="#venue" class="text-gray-600 hover:text-gold-accent transition-colors block">Venue</a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-gray-800 font-semibold mb-4 uppercase tracking-wider text-sm">Connect</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="#" class="text-gray-600 hover:text-gold-accent transition-colors">Instagram</a>
+                        <a href="#" class="text-gray-600 hover:text-gold-accent transition-colors block">Registry</a>
+                        <a href="#" class="text-gray-600 hover:text-gold-accent transition-colors block">Contact</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600">
+                <div>© 2026 Rahul & Sruthi. All rights reserved.</div>
+                <div class="mt-4 md:mt-0">Made with <span class="text-gold-accent">♥</span> for our loved ones</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- Premium Initialization Function ---
+        window.onload = function() {
+            // 1. Initialize Lucide Icons
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+            
+            // 2. Advanced scroll animations with Intersection Observer
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -80px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        if (entry.target.classList.contains('fade-in')) {
+                            entry.target.style.animation = 'glideIn 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) forwards';
+                        }
+                    }
+                });
+            }, observerOptions);
+            
+            // Ensure all fade-in variants are observed (including full sections)
+            document.querySelectorAll('.fade-in, .fade-in-section, .event-card, .glass-panel, .section-heading').forEach(el => {
+                // start hidden for the observer reveal
+                el.style.opacity = '0';
+                observer.observe(el);
+            });
+
+            // 3. Smooth scroll for navigation with offset
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        const offsetTop = target.offsetTop - 80;
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // 4. Premium navbar effects on scroll (use a smooth RAF-driven loop for parallax)
+            const navbar = document.getElementById('navbar');
+            let lastScrollY = 0;
+
+            // Smooth-scrolling / parallax interpolation variables
+            let targetScrollY = window.scrollY;
+            let currentScrollY = window.scrollY;
+            // mouse targets are read from window._parallaxMouseX / window._parallaxMouseY
+            let currentMouseX = window._parallaxMouseX || 0.5;
+            let currentMouseY = window._parallaxMouseY || 0.5;
+            const ease = 0.08; // interpolation easing (tuned for subtler motion)
+
+            // on scroll, only update the desired target; rendering happens in RAF loop
+            window.addEventListener('scroll', () => {
+                targetScrollY = window.scrollY;
+            }, { passive: true });
+
+            // replace immediate mouse-driven updates with target updates (smoothed in RAF)
+            // (mouse listener below will set window._parallaxMouseX/Y and we also capture targets there)
+
+            // RAF loop for smooth parallax motion and decorative transforms
+            function lerp(a, b, t) { return a + (b - a) * t; }
+
+            function rafLoop() {
+                // interpolate scroll and mouse
+                currentScrollY = lerp(currentScrollY, targetScrollY, ease);
+                // pull desired mouse target from the global mouse tracking (updated in mousemove)
+                const desiredMouseX = (typeof window._parallaxMouseX === 'number') ? window._parallaxMouseX : 0.5;
+                const desiredMouseY = (typeof window._parallaxMouseY === 'number') ? window._parallaxMouseY : 0.5;
+                currentMouseX = lerp(currentMouseX, desiredMouseX, ease);
+                currentMouseY = lerp(currentMouseY, desiredMouseY, ease);
+
+                // Minor thresholding to avoid unnecessary style churn
+                const scDiff = Math.abs(currentScrollY - lastScrollY);
+
+                // Update navbar blur/border based on targetScrollY (snappy but not jarring)
+                if (targetScrollY > 100) {
+                    navbar.style.backdropFilter = 'blur(8px)';
+                    navbar.querySelector('.glass-panel').style.borderColor = 'rgba(0,0,0,0.06)';
+                } else {
+                    navbar.style.backdropFilter = 'blur(6px)';
+                    navbar.querySelector('.glass-panel').style.borderColor = 'rgba(0,0,0,0.03)';
+                }
+
+                // Parallax transform for layers (use the smoothed scroll value)
+                document.querySelectorAll('.parallax-layer').forEach(layer => {
+                    const speed = parseFloat(layer.getAttribute('data-speed')) || 0.3;
+                    // a subtle transform using the smoothed scroll value
+                    layer.style.transform = `translateY(${currentScrollY * speed * -0.15}px)`;
+                });
+
+
+
+                lastScrollY = currentScrollY;
+                requestAnimationFrame(rafLoop);
+            }
+
+            // start the RAF loop
+            requestAnimationFrame(rafLoop);
+
+            // 5. Add stagger animation to elements on page load
+            const cards = document.querySelectorAll('.event-card');
+            cards.forEach((card, index) => {
+                card.style.setProperty('--delay', `${index * 0.15}s`);
+            });
+
+            // 6. Create floating particles effect for premium feel (optional)
+
+            // Hide loader (invitation-style)
+            const loaderEl = document.getElementById('loader');
+            if (loaderEl) {
+                loaderEl.style.opacity = '0';
+                setTimeout(() => { loaderEl.style.display = 'none'; }, 500);
+            }
+
+            // Initial reveal for fade-in sections
+            document.querySelectorAll('.fade-in-section').forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= window.innerHeight * 0.85) {
+                    section.classList.add('is-visible');
+                }
+            });
+
+            createParticles();
+
+
+        };
+
+        // Enhanced particles effect
+        function createParticles() {
+            const particleCount = 3;
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.style.position = 'fixed';
+                particle.style.width = Math.random() * 5 + 2 + 'px';
+                particle.style.height = particle.style.width;
+                particle.style.background = `rgba(212, 175, 55, ${Math.random() * 0.3})`;
+                particle.style.borderRadius = '50%';
+                particle.style.pointerEvents = 'none';
+                particle.style.zIndex = '-1';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animation = `float ${Math.random() * 10 + 10}s linear infinite`;
+                particle.style.filter = 'blur(1px)';
+                
+                document.body.appendChild(particle);
+            }
+        }
+
+
+
+        // Mouse tracking for premium interactive feel
+        document.addEventListener('mousemove', (e) => {
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            
+            document.querySelectorAll('.glow-effect').forEach(element => {
+                const rect = element.getBoundingClientRect();
+                if (rect.left < e.clientX && e.clientX < rect.right &&
+                    rect.top < e.clientY && e.clientY < rect.bottom) {
+                    element.style.setProperty('--mouse-x', `${x * 100}%`);
+                    element.style.setProperty('--mouse-y', `${y * 100}%`);
+                }
+            });
+
+            // store normalized mouse for parallax effects (RAF loop will read these)
+            window._parallaxMouseX = x;
+            window._parallaxMouseY = y;
+        });
+
+        // Carousel Functionality (responsive, accessible, swipe + keyboard)
+        function initializeCarousel() {
+            const carousel = document.getElementById('photoCarousel');
+            if (!carousel) return;
+
+            const track = document.getElementById('carouselTrack');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const dotsContainer = document.getElementById('carouselDots');
+            let autoTimer = null;
+
+            let currentIndex = 0;
+            const slides = Array.from(track.querySelectorAll('.carousel-slide'));
+            const totalSlides = slides.length;
+
+            // create dots safely
+            dotsContainer.innerHTML = '';
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement('button');
+                dot.type = 'button';
+                dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+                dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+                dot.addEventListener('click', () => goToSlide(i));
+                dotsContainer.appendChild(dot);
+            }
+            const dots = Array.from(dotsContainer.children);
+
+            // update track transform and container height based on image aspect
+            const container = carousel;
+            function setCarouselHeightFor(index) {
+                const img = slides[index].querySelector('img');
+                if (!img) return;
+                // If image not loaded yet, wait for it
+                if (!img.naturalWidth) {
+                    img.onload = () => setCarouselHeightFor(index);
+                    return;
+                }
+                const containerWidth = Math.min(container.clientWidth, window.innerWidth - 48);
+                const naturalWidth = img.naturalWidth;
+                const naturalHeight = img.naturalHeight;
+                let targetHeight = Math.round(containerWidth * (naturalHeight / naturalWidth));
+                // cap height for very tall portraits
+                const maxHeight = Math.round(window.innerHeight * 0.75);
+                if (targetHeight > maxHeight) targetHeight = maxHeight;
+                // minimum height for small images
+                const minH = 220;
+                if (targetHeight < minH) targetHeight = minH;
+                container.style.height = targetHeight + 'px';
+            }
+
+            function updateCarousel(animate = true) {
+                const translate = -currentIndex * 100;
+                if (!animate) track.style.transition = 'none';
+                track.style.transform = `translateX(${translate}%)`;
+                if (!animate) requestAnimationFrame(() => (track.style.transition = 'transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)'));
+                dots.forEach((dot, idx) => dot.classList.toggle('active', idx === currentIndex));
+                setCarouselHeightFor(currentIndex);
+            }
+
+            function goToSlide(index) {
+                currentIndex = (index + totalSlides) % totalSlides;
+                updateCarousel();
+                resetAutoAdvance();
+            }
+
+            function nextSlide() { goToSlide(currentIndex + 1); }
+            function prevSlide() { goToSlide(currentIndex - 1); }
+
+            if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+            if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+
+            // keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight') nextSlide();
+                if (e.key === 'ArrowLeft') prevSlide();
+            });
+
+            // touch / swipe support
+            let startX = 0;
+            let deltaX = 0;
+            track.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; deltaX = 0; pauseAutoAdvance(); }, {passive:true});
+            track.addEventListener('touchmove', (e) => { deltaX = e.touches[0].clientX - startX; }, {passive:true});
+            track.addEventListener('touchend', () => {
+                if (Math.abs(deltaX) > 50) {
+                    if (deltaX < 0) nextSlide(); else prevSlide();
+                }
+                resumeAutoAdvance();
+            });
+
+            // pause on hover/focus
+            carousel.addEventListener('mouseenter', pauseAutoAdvance);
+            carousel.addEventListener('mouseleave', resumeAutoAdvance);
+            carousel.addEventListener('focusin', pauseAutoAdvance);
+            carousel.addEventListener('focusout', resumeAutoAdvance);
+
+            function resetAutoAdvance() { pauseAutoAdvance(); startAutoAdvance(); }
+            function startAutoAdvance() {
+                if (autoTimer) return;
+                autoTimer = setInterval(nextSlide, 8000);
+            }
+            function pauseAutoAdvance() { if (autoTimer) { clearInterval(autoTimer); autoTimer = null; } }
+            function resumeAutoAdvance() { if (!autoTimer) startAutoAdvance(); }
+
+            // initialize sizes and first render
+            window.addEventListener('resize', () => updateCarousel(false));
+            updateCarousel(false);
+            startAutoAdvance();
+        }
+
+        // Initialize carousel when DOM is ready
+        // replace single carousel with a two-row running carousel
+        function initializeDuoCarousel() {
+            const srcImgs = Array.from(document.querySelectorAll('#gallerySources img')).map(i => i.getAttribute('data-src') || i.getAttribute('src'));
+            if (!srcImgs.length) return;
+
+            const topTrack = document.getElementById('duoTrackTop');
+            const bottomTrack = document.getElementById('duoTrackBottom');
+            if (!topTrack || !bottomTrack) return;
+
+            // load images to determine orientation
+            const loaders = srcImgs.map(src => new Promise(resolve => {
+                const im = new Image();
+                im.src = src;
+                im.onload = () => resolve({ src, w: im.naturalWidth, h: im.naturalHeight });
+                im.onerror = () => resolve({ src, w: 1, h: 1 });
+            }));
+
+            Promise.all(loaders).then(items => {
+                let topItems = [];
+                let bottomItems = [];
+                items.forEach(it => {
+                    if (it.w >= it.h) topItems.push(it.src);
+                    else bottomItems.push(it.src);
+                });
+
+                // If one group is empty, split evenly
+                if (topItems.length === 0 && bottomItems.length) {
+                    topItems = bottomItems.splice(0, Math.ceil(bottomItems.length / 2));
+                }
+                if (bottomItems.length === 0 && topItems.length) {
+                    bottomItems = topItems.splice(0, Math.ceil(topItems.length / 2));
+                }
+
+                function buildTrack(track, list, cls) {
+                    // append initial group of slides and record base count
+                    list.forEach(src => {
+                        const a = document.createElement('a');
+                        a.href = src; a.target = '_blank'; a.rel = 'noopener noreferrer';
+                        a.className = 'duo-slide ' + cls;
+                        const img = document.createElement('img');
+                        img.src = src; img.loading = 'lazy'; img.alt = '';
+                        a.appendChild(img);
+                        track.appendChild(a);
+                    });
+                    track.dataset.baseCount = list.length;
+                }
+
+                buildTrack(topTrack, topItems, 'horizontal');
+                buildTrack(bottomTrack, bottomItems, 'vertical');
+
+                // Wait for track images to load, then duplicate original groups until wide enough for seamless looping
+                const topImgs = Array.from(topTrack.querySelectorAll('img'));
+                const bottomImgs = Array.from(bottomTrack.querySelectorAll('img'));
+                const allImgs = topImgs.concat(bottomImgs);
+                const imgPromises = allImgs.map(img => new Promise(res => {
+                    if (img.complete && img.naturalWidth) return res();
+                    img.onload = res; img.onerror = res;
+                }));
+
+                Promise.all(imgPromises).then(() => {
+                    function ensureLongEnough(track) {
+                        const parentWidth = track.parentElement ? track.parentElement.clientWidth : window.innerWidth;
+                        const baseCount = parseInt(track.dataset.baseCount || '0', 10) || 0;
+                        const baseWidth = track.scrollWidth;
+                        let attempts = 0;
+                        while (track.scrollWidth < parentWidth * 2 && attempts < 8) {
+                            const children = Array.from(track.children).slice(0, baseCount);
+                            children.forEach(ch => track.appendChild(ch.cloneNode(true)));
+                            attempts++;
+                        }
+                        track._width = baseWidth || (track.scrollWidth / 2) || 0;
+                    }
+
+                    ensureLongEnough(topTrack);
+                    ensureLongEnough(bottomTrack);
+
+                    // continuous RAF-driven scroll (starts after images loaded/duplicated)
+                    let posTop = 0, posBottom = 0;
+                    const speedTop = 40; // px/sec
+                    const speedBottom = 55; // px/sec (slightly faster)
+                    let last = performance.now();
+                    let paused = false;
+
+                    function resize() {
+                        topTrack._width = topTrack._width || (topTrack.scrollWidth / 2) || 0;
+                        bottomTrack._width = bottomTrack._width || (bottomTrack.scrollWidth / 2) || 0;
+                    }
+
+                    window.addEventListener('resize', () => { resize(); });
+                    resize();
+
+                    const duoEl = document.getElementById('duoCarousel');
+                    duoEl.addEventListener('mouseenter', () => { paused = true; });
+                    duoEl.addEventListener('mouseleave', () => { paused = false; });
+                    duoEl.addEventListener('focusin', () => { paused = true; });
+                    duoEl.addEventListener('focusout', () => { paused = false; });
+
+                    // pause on small screens to avoid layout issues
+                    function checkMobilePause() { if (window.innerWidth < 640) { paused = true; } }
+                    window.addEventListener('resize', checkMobilePause);
+                    checkMobilePause();
+
+                    function step(now) {
+                        const dt = Math.min(40, now - last) / 1000;
+                        last = now;
+                        if (!paused) {
+                            if (topTrack._width > 0) {
+                                posTop = (posTop + speedTop * dt) % topTrack._width;
+                                topTrack.style.transform = `translateX(${-posTop}px)`;
+                            }
+                            if (bottomTrack._width > 0) {
+                                posBottom = (posBottom + speedBottom * dt) % bottomTrack._width;
+                                bottomTrack.style.transform = `translateX(${posBottom}px)`;
+                            }
+                        }
+                        requestAnimationFrame(step);
+                    }
+
+                    requestAnimationFrame(step);
+                    });
+                });
+            }
+
+        // initialize the new duo carousel
+        initializeDuoCarousel();
+    </script>
+</body>
+</html>
